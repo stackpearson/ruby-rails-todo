@@ -20,6 +20,7 @@
     <% end %>
 
   <% elsif task.done == false %>
+    <p><%= task.title %></p>
       <%= form_for task do |f| %>
 
       <%= f.check_box :done, :value => task.done %>
@@ -34,7 +35,7 @@
 
   <%= f.hidden_field :done, :value => false %>
   <%= f.hidden_field :todo_id, :value => @todo.id %>
-  <%= f.submit 'Add To List' %>
+  <%= f.submit 'Add Task' %>
 <% end %>
 
 <%= link_to 'Edit', edit_todo_path(@todo) %> |
