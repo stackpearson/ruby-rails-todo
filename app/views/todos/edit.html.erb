@@ -1,6 +1,10 @@
-<h1>Editing Todo</h1>
+<h1 class='edit-header'>Update Your ToDo Name</h1>
 
-<%= render 'form', todo: @todo %>
+<div class='edit-border'>
+    <%= render 'form', todo: @todo %>
 
-<%= link_to 'Show', @todo %> |
-<%= link_to 'Back', todos_path %>
+    <div class="edit-links">
+        <%= link_to 'Cancel', @todo %> |
+        <%= link_to 'Home', todos_path %>
+    </div>
+</div>

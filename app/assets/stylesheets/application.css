@@ -138,3 +138,41 @@ td {
     background-color: black;
     color: white;
 }
+
+/* edit styles */
+
+.edit-header {
+    text-align: center;
+}
+
+.edit-border {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.edit-container {
+    display: flex;
+    justify-content: center;
+}
+
+.edit-links {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.edit-links a {
+    text-decoration: none;
+    color: black;
+    margin: 0px 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.edit-links a:hover {
+    background-color: black;
+    color: white;
+}

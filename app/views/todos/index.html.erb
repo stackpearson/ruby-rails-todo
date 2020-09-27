@@ -10,12 +10,6 @@
 
 <div class="todo-container">
   <table>
-    <thead>
-      <tr>
-        <th class='todo-item-header'>ToDo Item</th>
-      </tr>
-    </thead>
-
     <tbody >
       <% @todos.each do |todo| %>
         <tr>
@@ -27,8 +21,7 @@
             <td><%= link_to 'Delete', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
-    </tbody>
-    
+    </tbody> 
   </table>
 
 
