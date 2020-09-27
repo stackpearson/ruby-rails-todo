@@ -1,39 +1,57 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @todo.name %>
-</p>
-<% @tasks.each do |task|%>
+<div class=task-container>
+    <h1><%= @todo.name %></h1>
+    
+    <div class="task-border">
+    <h2>Necessary Tasks</h2>
+      <% @tasks.each do |task|%>
 
-  <% if task.done == true %>
+        <% if task.done == true %>
+        <div class='task-items'>
+          <div>
+            <%= form_for task do |f| %>
+            <%= f.check_box :done, :value => task.done %>
+            <%= f.submit 'Incomplete' %>
+          </div>
+          <div>
+            <strike><p class="task-title"><%= task.title %></p></strike>
+          </div>
+            <% end %>
+        </div>
 
-  <strike>
-  <p><%= task.title %></p>
-  </strike>
+        <% elsif task.done == false %>
 
-    <%= form_for task do |f| %>
+        <div class='task-items'>
+          <div>
+            <%= form_for task do |f| %>
+            <%= f.check_box :done, :value => task.done %>
+            <%= f.submit 'Done' %>
+          </div>
+            <p class="task-title"><%= task.title %></p>
+          <% end %>
+        </div>
+        <% end %>
+      <% end %>
 
-      <%= f.check_box :done, :value => task.done %>
-
-    <%= f.submit 'Undo' %>
-    <% end %>
-
-  <% elsif task.done == false %>
-      <p><%= task.title %></p>
-      <%= form_for task do |f| %>
-      <%= f.check_box :done, :value => task.done %>
-      <%= f.submit 'Done' %>
-    <% end %>
-  <% end %>
-<% end %>
-
-<%= form_for @task do |f| %>
-  <p><%= f.text_field :title %></p>
-  <%= f.hidden_field :done, :value => false %>
-  <%= f.hidden_field :todo_id, :value => @todo.id %>
-  <%= f.submit 'Add Task' %>
-<% end %>
-
-<%= link_to 'Edit', edit_todo_path(@todo) %> |
-<%= link_to 'Back', todos_path %>
+      <div class='task-addition-container'>
+        <div class='task-addition-submission'>
+          <div>
+            <%= form_for @task do |f| %>
+            <p><%= f.text_field :title, placeholder: "Add a task for this todo item" %></p>
+            <%= f.hidden_field :done, :value => false %>
+            <%= f.hidden_field :todo_id, :value => @todo.id %>
+          </div>
+          <div>
+            <%= f.submit 'Add Task' %>
+          </div>
+          <% end %>
+        </div>
+        </div>
+        <div class='task-links'>
+          <%= link_to 'Rename', edit_todo_path(@todo) %> |
+          <%= link_to 'Home', todos_path %>
+        </div>
+      </div>
+    </div>
+</div>

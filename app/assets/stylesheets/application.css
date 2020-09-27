@@ -1,15 +1,140 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* index styling */
+
+.todo-header {
+    text-align: center;
+}
+
+table {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.todo-item-header {
+    text-align: left;
+}
+
+.todo-controller {
+    display: flex;
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+
+td {
+    margin: 5px;
+}
+
+.todo-body {
+    padding: 10px;
+}
+
+.todo-controller td a {
+    color: black;
+    margin: 0px 5px;
+    text-decoration: none;
+    padding: 2px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.todo-controller td a:hover {
+    color: white;
+    background-color:black;
+}
+
+.todo-new {
+    position: relative;
+    left: 90%;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.todo-new a {
+    text-decoration: none;
+    text-align: right;
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.todo-new:hover {
+    background-color: black;
+}
+
+.todo-new a:hover {
+    color: white;
+}
+
+.todo-name {
+    text-align: center;
+    font-weight: 700;
+    padding-top: 5px;
+}
+
+/* todos styling */
+
+.task-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-items {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.task-title {
+    margin-left: 5px;
+}
+
+.task-border {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.task-border h2 {
+    text-align: center;
+}
+
+.task-addition-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.task-addition-submission {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-addition-submission div {
+    margin: 5px;
+}
+
+.task-links {
+    text-align: center;
+}
+
+.task-links a {
+    text-decoration: none;
+    color: black;
+    margin: 0px 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.task-links a:hover {
+    background-color: black;
+    color: white;
+}
